@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+
+{%block body%}
+
+    <h2>Tasks</h2>
+    {% if tasks %}
+        <ul>
+            {% for task in tasks %}
+                <li>{{ task.task }} 
+                    <input type="checkbox" {% if task.completed %}checked{% endif %} disabled> 
+                    {% if task.completed %}Completed{% else %}Not Completed{% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tasks yet. Add a task to get started!</p>
+    {% endif %}
+    <a href="{{ url_for('add_task') }}"><button>Add Task</button></a>
+        
+
+{%endblock%}
+

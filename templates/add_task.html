@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+
+{%block body%}
+
+    
+    <form action="{{ url_for('add_task') }}" method="POST">
+        <h2>Add Task</h2>
+        <label for="task">Task</label>
+        <input type="text" id="task" name="task" required>
+        <div class="check-box">
+            <input type="checkbox" id="completed" name="completed">
+            <label for="completed">Completed</label>
+        </div>
+        <button type="submit">Add Task</button>
+    </form>
+
+{%endblock%}
+
