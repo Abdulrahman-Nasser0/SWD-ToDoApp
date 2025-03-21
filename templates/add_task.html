@@ -6,7 +6,7 @@
     <form action="{{ url_for('add_task') }}" method="POST">
         <h2>Add Task</h2>
         <label for="task">Task</label>
-        <input type="text" id="task" name="task" required>
+        <input type="text" id="task" name="task" placeholder="Enter the Task" required>
         <div class="check-box">
             <input type="checkbox" id="completed" name="completed">
             <label for="completed">Completed</label>

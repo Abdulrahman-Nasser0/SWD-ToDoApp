@@ -3,12 +3,17 @@
 {%block body%}
 
     <h2>Tasks</h2>
-    {% if tasks %}
+    {% if tasks_list %}
         <ul>
-            {% for task in tasks %}
-                <li>{{ task.task }} 
-                    <input type="checkbox" {% if task.completed %}checked{% endif %} disabled> 
-                    {% if task.completed %}Completed{% else %}Not Completed{% endif %}
+            {% for task in tasks_list %}
+                <li>
+                    <div class="item">
+                        {{ task.task }} 
+                    </div>
+                    <div class="state">
+                        <input type="checkbox" {% if task.completed %}checked{% endif %} disabled> 
+                        {% if task.completed %}Completed{% else %}Not Completed{% endif %}
+                    </div>
                 </li>
             {% endfor %}
         </ul>
